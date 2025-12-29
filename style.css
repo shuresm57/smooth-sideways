@@ -1,0 +1,82 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow: hidden;
+}
+
+body {
+  --dot-bg: #121212;
+  --dot-color: #242424;
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+}
+
+.image-container {
+    position: relative;
+    width: 40vmin;
+    height: 56vmin;
+}
+
+.image-container > .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 50%;
+}
+
+#image-track {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-2%, -50%); /* Center both horizontally and vertically */
+}
+
+
+#image-track {
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+}
+
+.image {
+    user-select: none;
+}
+
+.link-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Ensures it's above other elements */
+    transition: transform 500ms;
+    display: block; /* Makes the anchor tag fill the space */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+.image-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    user-select: none;
+    transition: transform 200ms;
+}
+
+.image-text:hover {
+    transform: translateX(-50%) scale(1.1);
+    transition: transform 500ms;
+}
